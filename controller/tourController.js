@@ -9,7 +9,7 @@ exports.aliasTopTours = (req, res, next) => {
   req.query.fields = 'name,price,ratingsAverage,summary,difficulty';
   next();
 };
-exports.getAllTours = factory.getAll(Tour, {});
+exports.getAllTours = factory.getAll(Tour);
 exports.getTour = factory.getOne(Tour, { path: 'reviews' });
 exports.createTour = factory.create(Tour);
 exports.deleteTour = factory.deleteOne(Tour);

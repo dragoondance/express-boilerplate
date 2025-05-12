@@ -11,7 +11,7 @@ exports.setTourUserIds = (req, res, next) => {
 exports.setTourIdFilter = (req, res, next) => {
   // Allow nested routes
   if (req.params.tourId) {
-    req.filter = { tour: req.params.tourId };
+    req.customFilter = { tour: req.params.tourId };
   }
   next();
 };

@@ -1,8 +1,8 @@
-import AppError from '../utils/appError.js';
-import catchAsync from '../utils/catchAsync.js';
-import APIFeatures from '../utils/apiFeatures.js';
+const AppError = require('../utils/appError.js');
+const catchAsync = require('../utils/catchAsync.js');
+const APIFeatures = require('../utils/apiFeatures.js');
 
-export const deleteOne = (Model) =>
+exports.deleteOne = (Model) =>
   catchAsync(async (req, res, next) => {
     const doc = await Model.findByIdAndDelete(req.params.id);
 
@@ -15,7 +15,7 @@ export const deleteOne = (Model) =>
       data: null,
     });
   });
-export const updateOne = (Model) =>
+exports.updateOne = (Model) =>
   catchAsync(async (req, res, next) => {
     const doc = await Model.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
@@ -33,7 +33,7 @@ export const updateOne = (Model) =>
       },
     });
   });
-export const create = (Model) =>
+exports.create = (Model) =>
   catchAsync(async (req, res, next) => {
     const doc = await Model.create(req.body);
 
@@ -44,7 +44,7 @@ export const create = (Model) =>
       },
     });
   });
-export const getOne = (Model, popOptions) =>
+exports.getOne = (Model, popOptions) =>
   catchAsync(async (req, res, next) => {
     let query = Model.findById(req.params.id);
     if (popOptions) query = query.populate(popOptions);
@@ -62,17 +62,24 @@ export const getOne = (Model, popOptions) =>
       },
     });
   });
-export const getAll = (Model) =>
+exports.getAll = (Model) =>
   catchAsync(async (req, res, next) => {
     // custom filter come from req.filter
-    let filter = {};
-    if (req.filter) filter = req.filter;
-    console.log({ filter });
-    const features = new APIFeatures(Model.find(filter), req.query)
-      .filter()
-      .sort()
-      .limitFields()
-      .paginate();
+    let features = {};
+    if (req.customFilter) {
+      features = new APIFeatures(Model.find(req.customFilter), req.query)
+        .filter()
+        .sort()
+        .limitFields()
+        .paginate();
+    } else {
+      features = new APIFeatures(Model.find(), req.query)
+        .filter()
+        .sort()
+        .limitFields()
+        .paginate();
+    }
+
     const docs = await features.query;
 
     res.status(200).json({
