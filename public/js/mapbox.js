@@ -1,4 +1,3 @@
-public / js / mapbox.js;
 const locations = JSON.parse(document.getElementById('map').dataset.locations);
 
 mapboxgl.accessToken =

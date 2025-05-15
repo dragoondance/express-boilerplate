@@ -7,6 +7,8 @@ const helmet = require('helmet');
 const xss = require('xss-clean');
 const mongoSanitize = require('express-mongo-sanitize');
 const hpp = require('hpp');
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const swaggerjsonFilePath = require('./docs/swagger.json');
 const AppError = require('./utils/appError');
 const GlobalErrorHandler = require('./controller/errorController');
@@ -17,6 +19,26 @@ const viewRouter = require('./routes/viewRoutes');
 
 //global middleware
 const app = express();
+app.options('*', cors());
+
+// Allow requests from all origins (or specify your frontend's origin)
+const allowedOrigins = ['http://127.0.0.1:3000', 'http://localhost:3000'];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true, // Allow cookies if needed
+  }),
+);
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
@@ -25,7 +47,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //security HTTP headers
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  }),
+);
 
 //development logging
 if (process.env.NODE_ENV === 'development') {
@@ -46,6 +72,7 @@ app.use(
     limit: '10kb',
   }),
 );
+app.use(cookieParser());
 
 //data sanitization against NoSQL query injection
 app.use(mongoSanitize());
@@ -69,6 +96,7 @@ app.use(
 
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
+  console.log();
   next();
 });
 
