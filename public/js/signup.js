@@ -1,9 +1,26 @@
-document.querySelector('.form').addEventListener('submit', function (event) {
-  event.preventDefault();
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  const passwordConfirmation = document.getElementById(
-    'passwordConfirmation',
-  ).value;
-  console.log(email, password); // Log the values to the console for debugging purposes
-});
+/* eslint-disable*/
+import axios from 'axios';
+import { showAlert } from './alert';
+
+export const signup = async (name, email, password, passwordConfirm) => {
+  try {
+    const result = await axios({
+      method: 'POST',
+      url: 'http://127.0.0.1:3000/api/v1/users/signup',
+      data: {
+        name,
+        email,
+        password,
+        passwordConfirm,
+      },
+    });
+    if (result.data.status === 'success') {
+      showAlert('success', 'Signed up successfully');
+      window.setTimeout(() => {
+        location.assign('/');
+      }, 500);
+    }
+  } catch (error) {
+    showAlert('error', error.response.data.message || 'Login failed');
+  }
+};

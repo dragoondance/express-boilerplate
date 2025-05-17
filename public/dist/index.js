@@ -670,8 +670,11 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 /* eslint-disable */ var _polyfill = require("@babel/polyfill");
 var _mapbox = require("./mapbox");
 var _login = require("./login");
+var _signup = require("./signup");
 const mapBox = document.getElementById('map');
-const loginForm = document.querySelector('.form');
+const loginForm = document.querySelector('.form__login');
+const logoutButton = document.querySelector('.nav__el--logout');
+const signupForm = document.querySelector('.form__signup');
 if (mapBox) {
     const locations = JSON.parse(mapBox.dataset.locations);
     (0, _mapbox.displayMap)(locations);
@@ -682,8 +685,17 @@ if (loginForm) loginForm.addEventListener('submit', function(event) {
     const password = document.getElementById('password').value;
     (0, _login.login)(email, password);
 });
+if (signupForm) signupForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const passwordConfirm = document.getElementById('passwordConfirm').value;
+    (0, _signup.signup)(name, email, password, passwordConfirm);
+});
+if (logoutButton) logoutButton.addEventListener('click', (0, _login.logout));
 
-},{"@babel/polyfill":"dTCHC","./mapbox":"3zDlz","./login":"7yHem"}],"dTCHC":[function(require,module,exports,__globalThis) {
+},{"@babel/polyfill":"dTCHC","./mapbox":"3zDlz","./login":"7yHem","./signup":"fNY2o"}],"dTCHC":[function(require,module,exports,__globalThis) {
 "use strict";
 require("f50de0aa433a589b");
 var _global = _interopRequireDefault(require("4142986752a079d4"));
@@ -7734,6 +7746,7 @@ exports.export = function(dest, destName, get) {
 /* eslint-disable*/ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "login", ()=>login);
+parcelHelpers.export(exports, "logout", ()=>logout);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _alert = require("./alert");
@@ -7747,6 +7760,9 @@ const login = async (email, password)=>{
                 password
             }
         });
+        console.log({
+            result
+        });
         if (result.data.status === 'success') {
             (0, _alert.showAlert)('success', 'Logged in successfully');
             window.setTimeout(()=>{
@@ -7755,6 +7771,17 @@ const login = async (email, password)=>{
         }
     } catch (error) {
         (0, _alert.showAlert)('error', error.response.data.message || 'Login failed');
+    }
+};
+const logout = async ()=>{
+    try {
+        const result = await (0, _axiosDefault.default)({
+            method: 'GET',
+            url: 'http://127.0.0.1:3000/api/v1/users/logout'
+        });
+        if (result.data.status === 'success') location.reload(true);
+    } catch (error) {
+        (0, _alert.showAlert)('error', 'Logout failed, try again.');
     }
 };
 
@@ -12541,18 +12568,46 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "hideAlert", ()=>hideAlert);
 parcelHelpers.export(exports, "showAlert", ()=>showAlert);
 const hideAlert = ()=>{
-    const el = document.querySelector('.alert').remove();
+    const el = document.querySelector('.alert');
     if (el) el.parentElement.removeChild(el);
 };
 const showAlert = (type, message)=>{
     hideAlert();
     const markup = `<div class="alert alert--${type}">${message}</div>`;
-    document.querySelector('body').insertAdjacentHTML('afterBegin', markup);
-    window.setTimeout(()=>{
-        hideAlert();
-    }, 5000);
+    document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
+    window.setTimeout(hideAlert, 5000);
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7r7os","f2QDv"], "f2QDv", "parcelRequire1248", {})
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fNY2o":[function(require,module,exports,__globalThis) {
+/* eslint-disable*/ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "signup", ()=>signup);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _alert = require("./alert");
+const signup = async (name, email, password, passwordConfirm)=>{
+    try {
+        const result = await (0, _axiosDefault.default)({
+            method: 'POST',
+            url: 'http://127.0.0.1:3000/api/v1/users/signup',
+            data: {
+                name,
+                email,
+                password,
+                passwordConfirm
+            }
+        });
+        if (result.data.status === 'success') {
+            (0, _alert.showAlert)('success', 'Signed up successfully');
+            window.setTimeout(()=>{
+                location.assign('/');
+            }, 500);
+        }
+    } catch (error) {
+        (0, _alert.showAlert)('error', error.response.data.message || 'Login failed');
+    }
+};
+
+},{"axios":"jo6P5","./alert":"kxdiQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7r7os","f2QDv"], "f2QDv", "parcelRequire1248", {})
 
 //# sourceMappingURL=index.js.map
