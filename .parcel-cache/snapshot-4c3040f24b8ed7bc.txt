@@ -1,13 +1,13 @@
-17835
+17836
 60/home/limlink/workspace/express-boilerplate/views/signup.pug1747470138713239506 0
 59/home/limlink/workspace/express-boilerplate/views/login.pug1747464157153939130 0
 65/home/limlink/workspace/express-boilerplate/views/_reviewCard.pug1747135056022069844 0
 58/home/limlink/workspace/express-boilerplate/views/tour.pug1747311602847889614 0
 62/home/limlink/workspace/express-boilerplate/views/overview.pug1747131174249970602 0
 62/home/limlink/workspace/express-boilerplate/views/_content.pug1747061182252997835 0
-61/home/limlink/workspace/express-boilerplate/views/_header.pug1747473368018035270 0
+61/home/limlink/workspace/express-boilerplate/views/_header.pug1747496001892015906 0
 58/home/limlink/workspace/express-boilerplate/views/base.pug1747446895545890657 0
-49/home/limlink/workspace/express-boilerplate/views1747477184318253105 1
+49/home/limlink/workspace/express-boilerplate/views1747488305603558743 1
 77/home/limlink/workspace/express-boilerplate/node_modules/core-js/CHANGELOG.md1747445685110849589 0
 77/home/limlink/workspace/express-boilerplate/node_modules/core-js/package.json1747445685109849637 0
 73/home/limlink/workspace/express-boilerplate/node_modules/core-js/index.js1747445685089850592 0
@@ -6619,6 +6619,7 @@
 124/home/limlink/workspace/express-boilerplate/node_modules/eslint-plugin-react/node_modules/resolve/test/resolver/invalid_main1746169779222519017 1
 111/home/limlink/workspace/express-boilerplate/node_modules/json-stable-stringify-without-jsonify/test/replacer.js1746169777069611908 0
 79/home/limlink/workspace/express-boilerplate/node_modules/lodash/fp/assignAll.js1746169776523635464 0
+61/home/limlink/workspace/express-boilerplate/views/account.pug1747527061914365492 0
 88/home/limlink/workspace/express-boilerplate/node_modules/es-abstract/2021/MinFromTime.js1746169778200563110 0
 96/home/limlink/workspace/express-boilerplate/node_modules/@apidevtools/swagger-parser/lib/util.js1746169779245518024 0
 80/home/limlink/workspace/express-boilerplate/node_modules/es-abstract/2021/tables1746169778235561601 1
@@ -7510,7 +7511,7 @@
 92/home/limlink/workspace/express-boilerplate/node_modules/eslint/lib/rules/no-new-wrappers.js1746169778694208546 0
 104/home/limlink/workspace/express-boilerplate/node_modules/aria-query/lib/etc/roles/abstract/selectRole.js1746169778595545975 0
 73/home/limlink/workspace/express-boilerplate/node_modules/lodash/fp/sum.js1746169776945617257 0
-62/home/limlink/workspace/express-boilerplate/public/js/index.js1747470157419687218 0
+62/home/limlink/workspace/express-boilerplate/public/js/index.js1747527309570115729 0
 87/home/limlink/workspace/express-boilerplate/node_modules/core-js/modules/_a-function.js1747445685042100356 0
 102/home/limlink/workspace/express-boilerplate/node_modules/swagger-jsdoc/docusaurus/docusaurus.config.js1746169774501722703 0
 72/home/limlink/workspace/express-boilerplate/node_modules/ajv/lib/data.js1746169778807536922 0
@@ -8548,7 +8549,7 @@
 71/home/limlink/workspace/express-boilerplate/node_modules/babel-walk/lib1747056080169054940 1
 87/home/limlink/workspace/express-boilerplate/node_modules/imurmurhash/imurmurhash.min.js1746169777360599352 0
 93/home/limlink/workspace/express-boilerplate/node_modules/core-js/fn/array/virtual/includes.js1747445685088850640 0
-66/home/limlink/workspace/express-boilerplate/routes/reviewRoutes.js1747035050653995810 0
+66/home/limlink/workspace/express-boilerplate/routes/reviewRoutes.js1747526250955312414 0
 76/home/limlink/workspace/express-boilerplate/node_modules/lodash/partition.js1746169776603632013 0
 75/home/limlink/workspace/express-boilerplate/node_modules/own-keys/.eslintrc1746169775387684477 0
 92/home/limlink/workspace/express-boilerplate/node_modules/caniuse-lite/data/features/xhtml.js1747404086049288725 0
@@ -8836,7 +8837,7 @@
 109/home/limlink/workspace/express-boilerplate/node_modules/aria-query/lib/etc/roles/literal/columnheaderRole.js1746169778587546413 0
 85/home/limlink/workspace/express-boilerplate/node_modules/@parcel/packager-svg/LICENSE1747404085933614502 0
 85/home/limlink/workspace/express-boilerplate/node_modules/es-abstract/2016/TimeClip.js1746169778221562204 0
-73/home/limlink/workspace/express-boilerplate/controller/viewsController.js1747476847377117024 0
+73/home/limlink/workspace/express-boilerplate/controller/viewsController.js1747527207945889940 0
 98/home/limlink/workspace/express-boilerplate/node_modules/eslint/lib/rules/prefer-object-has-own.js1746169778856534808 0
 89/home/limlink/workspace/express-boilerplate/node_modules/mongodb/lib/gridfs/upload.js.map1746169776386641375 0
 74/home/limlink/workspace/express-boilerplate/node_modules/mquery/lib/env.js1746169775912661826 0
@@ -9319,7 +9320,7 @@
 55/home/limlink/workspace/express-boilerplate/.prettierrc1746169527448386538 0
 104/home/limlink/workspace/express-boilerplate/node_modules/@parcel/transformer-json/src/JSONTransformer.js1747404085945613917 0
 96/home/limlink/workspace/express-boilerplate/node_modules/@babel/types/lib/validators/validate.js1747056080342349206 0
-64/home/limlink/workspace/express-boilerplate/public/dist/index.js1747470157562602183 0
+64/home/limlink/workspace/express-boilerplate/public/dist/index.js1747527393129482762 0
 87/home/limlink/workspace/express-boilerplate/node_modules/axe-core/LICENSE-3RD-PARTY.txt1746169778843535369 0
 81/home/limlink/workspace/express-boilerplate/node_modules/es-abstract/2020/GetV.js1746169778184563801 0
 118/home/limlink/workspace/express-boilerplate/node_modules/eslint-plugin-react/node_modules/resolve/test/node_path/y/ccc1746169779219218745 1
@@ -9552,14 +9553,14 @@
 100/home/limlink/workspace/express-boilerplate/node_modules/@eslint-community/eslint-utils/index.js.map1746169778911532434 0
 85/home/limlink/workspace/express-boilerplate/node_modules/lodash/_baseIsArrayBuffer.js1746169776489636931 0
 83/home/limlink/workspace/express-boilerplate/node_modules/validator/es/lib/isISIN.js1746169774205735474 0
-64/home/limlink/workspace/express-boilerplate/routes/viewRoutes.js1747315355979044269 0
+64/home/limlink/workspace/express-boilerplate/routes/viewRoutes.js1747527106927926133 0
 94/home/limlink/workspace/express-boilerplate/node_modules/es-abstract/2020/Number/bitwiseNOT.js1746169778157564966 0
 108/home/limlink/workspace/express-boilerplate/node_modules/eslint-plugin-react/lib/rules/jsx-indent-props.d.ts1746169778035641648 0
 86/home/limlink/workspace/express-boilerplate/node_modules/core-js/modules/es7.set.of.js1747445685082850927 0
 97/home/limlink/workspace/express-boilerplate/node_modules/caniuse-lite/data/features/webworkers.js1747404086048756879 0
 78/home/limlink/workspace/express-boilerplate/node_modules/lodash/fp/isNumber.js1746169776547634429 0
 96/home/limlink/workspace/express-boilerplate/node_modules/@parcel/reporter-cli/src/phaseReport.js1747404085975696266 0
-55/home/limlink/workspace/express-boilerplate/public/dist1747470157599600419 1
+55/home/limlink/workspace/express-boilerplate/public/dist1747527393136482458 1
 69/home/limlink/workspace/express-boilerplate/node_modules/range-parser1746169774936703935 1
 99/home/limlink/workspace/express-boilerplate/node_modules/lmdb/node_modules/node-addon-api/nothing.c1747404085929614697 0
 92/home/limlink/workspace/express-boilerplate/node_modules/@nodelib/fs.walk/out/types/index.js1746169778857288150 0
@@ -9708,13 +9709,13 @@
 97/home/limlink/workspace/express-boilerplate/node_modules/es-abstract/2015/IsPropertyDescriptor.js1746169778194563369 0
 94/home/limlink/workspace/express-boilerplate/node_modules/core-js/library/modules/es7.set.of.js1747445685082850927 0
 81/home/limlink/workspace/express-boilerplate/node_modules/prettier/plugins/yaml.js1746169775766668125 0
-43/home/limlink/workspace/express-boilerplate1747443308067333745 1
+43/home/limlink/workspace/express-boilerplate1747488985409835510 1
 84/home/limlink/workspace/express-boilerplate/node_modules/es-abstract/2022/WeekDay.js1746169778239561428 0
 80/home/limlink/workspace/express-boilerplate/node_modules/array-flatten/README.md1746169778536548614 0
 81/home/limlink/workspace/express-boilerplate/node_modules/doctrine/lib/doctrine.js1746169778248561039 0
 89/home/limlink/workspace/express-boilerplate/node_modules/eslint/lib/rules/no-dupe-keys.js1746169778537548570 0
 91/home/limlink/workspace/express-boilerplate/node_modules/call-bind-apply-helpers/index.d.ts1746169778378561407 0
-68/home/limlink/workspace/express-boilerplate/public/dist/index.js.map1747470157575601563 0
+68/home/limlink/workspace/express-boilerplate/public/dist/index.js.map1747527393136006032 0
 62/home/limlink/workspace/express-boilerplate/node_modules/@pkgr1746169773691058221 1
 74/home/limlink/workspace/express-boilerplate/node_modules/esutils/README.md1746169777622406258 0
 74/home/limlink/workspace/express-boilerplate/node_modules/caniuse-lite/data1747404086019511913 1
@@ -12212,7 +12213,7 @@
 77/home/limlink/workspace/express-boilerplate/node_modules/lodash/fp/toUpper.js1746169777006614626 0
 86/home/limlink/workspace/express-boilerplate/node_modules/is-number-object/CHANGELOG.md1746169777241604486 0
 90/home/limlink/workspace/express-boilerplate/node_modules/array.prototype.flatmap/README.md1746169778559547621 0
-72/home/limlink/workspace/express-boilerplate/controller/authController.js1747463064732898194 0
+72/home/limlink/workspace/express-boilerplate/controller/authController.js1747496732700760849 0
 88/home/limlink/workspace/express-boilerplate/node_modules/es-abstract/2018/GetIterator.js1746169778177564103 0
 84/home/limlink/workspace/express-boilerplate/node_modules/ast-types-flow/lib/types.js1746169778533548743 0
 108/home/limlink/workspace/express-boilerplate/node_modules/eslint-plugin-react/lib/rules/display-name.d.ts.map1746169778027570575 0
@@ -13640,7 +13641,7 @@
 72/home/limlink/workspace/express-boilerplate/public/img/users/user-11.jpg1746169527494367495 0
 79/home/limlink/workspace/express-boilerplate/node_modules/is-shared-array-buffer1746169777208605910 1
 77/home/limlink/workspace/express-boilerplate/node_modules/mquery/lib/mquery.js1746169775912661826 0
-50/home/limlink/workspace/express-boilerplate/app.js1747443103539177310 0
+50/home/limlink/workspace/express-boilerplate/app.js1747527377387940150 0
 89/home/limlink/workspace/express-boilerplate/node_modules/eslint-plugin-jsx-a11y/__mocks__1746169777822579419 1
 107/home/limlink/workspace/express-boilerplate/node_modules/eslint-plugin-jsx-a11y/__mocks__/IdentifierMock.js1746169777814579764 0
 89/home/limlink/workspace/express-boilerplate/node_modules/esquery/dist/esquery.lite.min.js1746169777683585416 0
