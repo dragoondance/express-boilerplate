@@ -1,6 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const express = require('express');
 const userController = require('../controller/userController');
 const authController = require('../controller/authController');
+
 const userRouter = express.Router();
 
 userRouter.post('/signup', authController.signup);
@@ -13,7 +15,13 @@ userRouter.use(authController.protect);
 
 userRouter.patch('/updateMyPassword', authController.updateMyPassword);
 userRouter.get('/me', userController.getMe, userController.getUser);
-userRouter.patch('/updateMe', userController.updateMe);
+userRouter.patch(
+  '/updateMe',
+  userController.uploadUserPhoto,
+  userController.resizeUserPhoto,
+  userController.updateMe,
+);
+
 userRouter.delete('/deleteMe', userController.deleteMe);
 
 userRouter.use(authController.restrictTo('admin'));

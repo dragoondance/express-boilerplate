@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const filterObj = (obj, ...allowedFields) => {
   const newObj = {};
   Object.keys(obj).forEach((el) => {

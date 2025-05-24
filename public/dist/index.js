@@ -699,12 +699,11 @@ if (signupForm) signupForm.addEventListener('submit', function(event) {
 if (logoutButton) logoutButton.addEventListener('click', (0, _login.logout));
 if (userDataForm) userDataForm.addEventListener('submit', (e)=>{
     e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    (0, _updateSettings.updateSettings)({
-        name,
-        email
-    }, 'data');
+    const form = new FormData();
+    form.append('name', document.getElementById('name').value);
+    form.append('email', document.getElementById('email').value);
+    form.append('photo', document.getElementById('photo').files);
+    (0, _updateSettings.updateSettings)(form, 'data');
 });
 if (userPasswordForm) userPasswordForm.addEventListener('submit', async (e)=>{
     e.preventDefault();
@@ -12657,6 +12656,6 @@ const updateSettings = async (data, type)=>{
     }
 };
 
-},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./alert":"kxdiQ"}]},["7r7os","f2QDv"], "f2QDv", "parcelRequire1248", {})
+},{"axios":"jo6P5","./alert":"kxdiQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7r7os","f2QDv"], "f2QDv", "parcelRequire1248", {})
 
 //# sourceMappingURL=index.js.map

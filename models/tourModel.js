@@ -50,7 +50,7 @@ const tourSchema = new mongoose.Schema(
       type: Number,
       required: [true, 'A tour must have a price'],
     },
-    pricediscount: {
+    priceDiscount: {
       type: Number,
       validate: {
         validator: function (val) {
