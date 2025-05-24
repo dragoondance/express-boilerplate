@@ -28,7 +28,6 @@ exports.uploadTourImages = upload.fields([
 
 exports.resizeTourImages = catchAsync(async (req, res, next) => {
   if (!req.files.imageCover || !req.files.images) return next();
-
   const imageCoverFileName = `tour-${req.params.id}-${Date.now()}-cover.jpeg`;
 
   await sharp(req.file.imageCover[0].buffer)
@@ -92,11 +91,6 @@ exports.getTourStats = catchAsync(async (req, res, next) => {
         avgPrice: -1,
       },
     },
-    // {
-    //   $match: {
-    //     _id: { $ne: 'EASY' },
-    //   },
-    // },
   ]);
 
   res.status(200).json({
